@@ -6,10 +6,8 @@ def delete_bytes(file_path, start_byte, end_byte):
     with io.open(file_path_tmp, "rb") as f:
         file_data = f.read()
 
-    # Delete the bytes from the file data.
     file_data = file_data[:start_byte] + file_data[end_byte:]
 
-    # Write the updated file data to the file.
     with io.open(file_path_tmp, "wb") as f:
         f.write(file_data)
 
